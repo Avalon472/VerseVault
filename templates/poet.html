@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poem Reader</title>
+    <!--<link rel="stylesheet" href="styles.css">-->
+</head>
+<body>
+<a href = "/"><button>Home</button></a>
+<h1>{{ poet }} </h1>
+<div>
+    {% for title in titles %}
+        <p>{{title}}</p>
+    {% endfor %}
+</div>
+</body>
+</html>
