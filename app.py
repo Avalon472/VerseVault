@@ -37,7 +37,7 @@ def get_random():
     author = data.get('author')
     lines = data.get('lines', [])
 
-    return render_template("random.html", title = poem_title, author = author, lines = lines)
+    return render_template("poem.html", title = poem_title, author = author, lines = lines)
 
 @app.route("/poet")
 def get_poetWorks():

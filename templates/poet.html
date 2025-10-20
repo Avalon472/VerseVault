@@ -11,7 +11,8 @@
 <h1>{{ poet }} </h1>
 <div>
     {% for title in titles %}
-        <p>{{title}}</p>
+        <a href = "/poem?title={{title}}"><p>{{title}} </p></a>
+        
     {% endfor %}
 </div>
 </body>
