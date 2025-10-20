@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poem Reader</title>
-    <!--<link rel="stylesheet" href="styles.css">-->
+    <title>{{title}}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename = 'styles.css')}}">
 </head>
 <body>
-<a href = "/"><button>Home</button></a>
-<a href = "/poet?poet={{author}}"><button>Author</button></a>
-<h1>{{ title }} </h1>
-<h3> {{ author }}</h3>
-<div>
+<div class = "navbar">
+    <a href = "/"><button>Home</button></a>
+    <a href = "/poet?poet={{author}}"><button>Author</button></a>
+    <a href = "/random"><button>Random</button></a>
+</div>
+<div id = "poemInfo">
+    <h1>{{ title }} </h1>
+    <h3> {{ author }}</h3>
+    <h3> {{linecount}} lines</h3>
+</div>
+<div id = "poemContent">
     {% for line in lines %}
         <p>{{line}}</p>
     {% endfor %}

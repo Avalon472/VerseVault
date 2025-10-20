@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poem Reader</title>
-    <!--<link rel="stylesheet" href="styles.css">-->
+<link rel="stylesheet" href="{{ url_for('static', filename = 'styles.css')}}">
 </head>
 <body>
-<a href = "/"><button>Home</button></a>
-<h1>{{ poet }} </h1>
-<div>
-    {% for title in titles %}
-        <a href = "/poem?title={{title}}"><p>{{title}} </p></a>
-        
-    {% endfor %}
+<div class = "navbar"><a href = "/"><button>Home</button></a></div>
+<div id = "poetInfo">
+    <h1>{{ poet }} </h1>
+    <div id = "poetList">
+        {% for title, linecount in info %}
+            <p>
+                <a href = "/poem?title={{title}}">
+                    {{title}}</a> - {{linecount}} lines
+            </p>
+        {% endfor %}
+    </div>
 </div>
 </body>
 </html>

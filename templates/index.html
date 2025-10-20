@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'index.css')}}">
+    <title>Poem Reader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'styles.css')}}">
 </head>
 <body>
 <div id = "header">
@@ -13,13 +13,13 @@
     </div>
 </div>
 <div id = "body">
-    <a href = "/random"><button>Random</button></a>
+    <a href = "/random"><button id = "randButton">Random</button></a>
     <form action = "/poem" method = "get">
-        <input type = "text" name = "title" placeholder="Enter title">
+        <input class = "search"  type = "text" name = "title" placeholder="Enter title">
         <!--<button type = "submit">Submit</button>-->
     </form>
     <form action = "/poet" method = "get">
-        <input type = "text" name = "poet" placeholder="Enter poet">
+        <input class = "search"  type = "text" name = "poet" placeholder="Enter poet">
         <!--<button type = "submit">Submit</button>-->
     </form>
 </div>

@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 import requests
-from urllib.parse import quote
 
 app = Flask(__name__)
 
@@ -22,8 +21,10 @@ def get_poem():
     poem_title = data['title']
     author = data.get('author')
     lines = data.get('lines', [])
+    linecount = data.get('linecount')
 
-    return render_template("poem.html", title = poem_title, author = author, lines = lines)
+    return render_template("poem.html", title = poem_title, author = author, 
+                           lines = lines, linecount = linecount)
 
 @app.route("/random")
 def get_random():
@@ -36,21 +37,28 @@ def get_random():
     poem_title = data['title']
     author = data.get('author')
     lines = data.get('lines', [])
+    linecount = data.get('linecount')
 
-    return render_template("poem.html", title = poem_title, author = author, lines = lines)
+    return render_template("poem.html", title = poem_title, author = author,
+                            lines = lines, linecount = linecount)
 
 @app.route("/poet")
 def get_poetWorks():
     poet = request.args.get("poet")
 
-    r = requests.get(f"{pdb}/author/{poet}/title")
+    r = requests.get(f"{pdb}/author/{poet}")
     if r.status_code != 200:
         return f"Poet: {poet} could not be found"
     data = r.json()
 
-    titles = [poem['title'] for poem in data]
+    info = [(poem['title'], int(poem['linecount'])) for poem in data]
 
-    return render_template("poet.html", titles = titles, poet = poet)
+    info = sorted(info, key = lambda x: x[1])
+
+
+    poet = data[0]['author']
+
+    return render_template("poet.html", poet = poet, info = info)
 
 if __name__ == "__main__":
     app.run(debug=True)

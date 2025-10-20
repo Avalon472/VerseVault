@@ -1,0 +1,78 @@
+:root{
+    --headerBgColor: black;
+    --titleBgColor: purple;
+    --bodyBgColor: rgb(255, 255, 255);
+    --buttonBgColor: silver;
+    --inputBgcolor: silver;
+}
+body{
+    margin: 0px;
+}
+
+.navbar{
+    padding: 10px;
+}
+/* Elements specific to index.html */
+#header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--headerBgColor);
+    height: 25vh;
+}
+#header > *{
+    text-align: center;
+}
+
+#title{
+    background-color: var(--titleBgColor);
+    color: white;
+    width: 50%;
+    border-radius: 20px;
+    font-size: 2em;
+}
+
+#body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bodyBgColor);
+    height: 70vh;
+    padding-top: 5vh;
+    gap: 50px;
+}
+
+#randButton{
+    height: 50px;
+    width: 150px;
+    font-size: 2em;
+    background-color: var(--buttonBgColor);
+}
+
+.search{
+    height: 55px;
+    aspect-ratio: 10/1;
+    font-size: 2em;
+    background-color: var(--inputBgcolor);
+}
+
+/* Elements specific to poem.html */
+#poemInfo{
+    text-align: center;
+    background-color: rgb(218, 218, 218);
+}
+#poemContent{
+    text-align: center;
+}
+
+/* Elements specific to poet.html */
+#poetInfo{
+    padding: 10px;
+    text-align: center;
+}
+
+#poetList{
+    text-align: left;
+    padding-left: 25px;
+}
