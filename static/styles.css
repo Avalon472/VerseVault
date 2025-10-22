@@ -1,12 +1,12 @@
 :root{
     font-size: 20px;
-    --headerBgColor: black;
+    --headerBgColor: rgb(95, 39, 39);
     --titleBgColor: purple;
     --bodyBgColor: rgb(224, 217, 217);
     --titleBgColor: rgb(67, 35, 35);
     --headerTextColor: white;
     --buttonBgColor: silver;
-    --inputBgColor: silver;
+    --inputBgColor: rgb(207, 206, 206);
     --navbarBgColor: rgb(47, 87, 85);
     --buttonBgColor: rgb(90, 150, 144);
 }
@@ -44,13 +44,21 @@ button{
     border-radius: 10px;
     border: 0px;
     color: white;
+    transition: background-color 0.3s ease-in-out;
+    padding: 5px 10px;
+}
+button:hover{
+    background-color: rgb(24, 163, 152);
+    scale: 1.05;
 }
 
 .navbar{
-    padding: 2% 5%;
+    padding: 10px 2.5%;
     background-color: var(--navbarBgColor);
     position: absolute;
-    width: 90%;
+    width: 95%;
+    display: flex;
+    gap: 20px;
 }
 
 .toTopButton{
@@ -94,11 +102,10 @@ button{
     height: 50px;
     width: 150px;
     font-size: 1.5rem;
-    background-color: var(--buttonBgColor);
 }
 
 .search{
-    height: 55px;
+    width: 100%;
     aspect-ratio: 10/1;
     font-size: 1.5rem;
     background-color: var(--inputBgColor);
@@ -118,7 +125,7 @@ button{
     background-color: var(--titleBgColor);
     color: var(--headerTextColor);
     padding: 15px;
-    padding-top: 10%;
+    padding-top: 7.5%;
     width: 67%;
 }
 #poemInfo a{
@@ -142,7 +149,8 @@ button{
     background-color: var(--titleBgColor);
     color: var(--headerTextColor);
     width: 100%;
-    padding-top: 10%;
+    padding-top: 7.5%;
+    padding-bottom: 2%;
 }
 #poetInfo{
     text-align: center;
