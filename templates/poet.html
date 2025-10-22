@@ -9,7 +9,9 @@
 <body>
 <div class = "navbar"><a href = "/"><button>Home</button></a></div>
 <div id = "poetInfo">
-    <h1>{{ poet }} </h1>
+    <div id = "poetHeader">
+        <h1>{{ poet }} </h1>
+    </div>
     <div id = "poetList">
         {% for title, linecount in info %}
             <p>

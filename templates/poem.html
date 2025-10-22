@@ -12,15 +12,17 @@
     <a href = "/poet?poet={{author}}"><button>Author</button></a>
     <a href = "/random"><button>Random</button></a>
 </div>
-<div id = "poemInfo">
-    <h1>{{ title }} </h1>
-    <h3> {{ author }}</h3>
-    <h3> {{linecount}} lines</h3>
-</div>
 <div id = "poemContent">
-    {% for line in lines %}
-        <p>{{line}}</p>
-    {% endfor %}
+    <div id = "poemInfo">
+        <h1>{{ title }} </h1>
+        <h3> By: <a href = "/poet?poet={{author}}"> {{ author }} </a></h3>
+        <h3> {{linecount}} lines</h3>
+    </div>
+    <div id = "poemLines">
+        {% for line in lines %}
+            <p>{{line}}</p>
+        {% endfor %}
+    </div>
 </div>
 </body>
 </html>

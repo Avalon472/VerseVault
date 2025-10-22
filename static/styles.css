@@ -1,16 +1,62 @@
 :root{
+    font-size: 20px;
     --headerBgColor: black;
     --titleBgColor: purple;
-    --bodyBgColor: rgb(255, 255, 255);
+    --bodyBgColor: rgb(224, 217, 217);
+    --titleBgColor: rgb(67, 35, 35);
+    --headerTextColor: white;
     --buttonBgColor: silver;
-    --inputBgcolor: silver;
+    --inputBgColor: silver;
+    --navbarBgColor: rgb(47, 87, 85);
+    --buttonBgColor: rgb(90, 150, 144);
 }
 body{
     margin: 0px;
 }
+h1{
+    font-size: 2rem;
+    margin: 0.5rem;
+}
+h3{
+    font-size: 1rem;
+    margin: 0.25rem;
+}
+p{
+    font-size: 1rem;
+    margin: 0.75rem;
+}
+
+
+a {
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: black;
+    transition: color 0.3s ease-in-out, text-decoration-color 0.3s ease-in-out;
+}
+a:hover {
+    color: rgb(165, 78, 199);
+    text-decoration-color: transparent;
+}
+
+button{
+    font-size: 0.75rem;
+    background-color: var(--buttonBgColor);
+    border-radius: 10px;
+    border: 0px;
+    color: white;
+}
 
 .navbar{
-    padding: 10px;
+    padding: 2% 5%;
+    background-color: var(--navbarBgColor);
+    position: absolute;
+    width: 90%;
+}
+
+.toTopButton{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
 /* Elements specific to index.html */
 #header{
@@ -19,6 +65,7 @@ body{
     align-items: center;
     justify-content: center;
     background-color: var(--headerBgColor);
+    color: var(--headerTextColor);
     height: 25vh;
 }
 #header > *{
@@ -27,7 +74,7 @@ body{
 
 #title{
     background-color: var(--titleBgColor);
-    color: white;
+    color: var(--headerTextColor);
     width: 50%;
     border-radius: 20px;
     font-size: 2em;
@@ -46,33 +93,66 @@ body{
 #randButton{
     height: 50px;
     width: 150px;
-    font-size: 2em;
+    font-size: 1.5rem;
     background-color: var(--buttonBgColor);
 }
 
 .search{
     height: 55px;
     aspect-ratio: 10/1;
-    font-size: 2em;
-    background-color: var(--inputBgcolor);
+    font-size: 1.5rem;
+    background-color: var(--inputBgColor);
 }
 
 /* Elements specific to poem.html */
-#poemInfo{
-    text-align: center;
-    background-color: rgb(218, 218, 218);
-}
 #poemContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#poemInfo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
+    background-color: var(--titleBgColor);
+    color: var(--headerTextColor);
+    padding: 15px;
+    padding-top: 10%;
+    width: 67%;
+}
+#poemInfo a{
+    color: var(--headerTextColor);
+    text-decoration-color: var(--headerTextColor);
+}
+#poemInfo a:hover{
+    color: rgb(165, 78, 199);
+    text-decoration-color: transparent;
+}
+
+#poemLines{
+    text-align: center;
+    background-color: var(--bodyBgColor);
+    padding: 15px;
+    width: 67%;
 }
 
 /* Elements specific to poet.html */
+#poetHeader{
+    background-color: var(--titleBgColor);
+    color: var(--headerTextColor);
+    width: 100%;
+    padding-top: 10%;
+}
 #poetInfo{
-    padding: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #poetList{
     text-align: left;
-    padding-left: 25px;
+    align-items: center;
+    padding: 10px;
 }
