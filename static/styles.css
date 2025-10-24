@@ -1,17 +1,19 @@
 :root{
     font-size: 20px;
-    --headerBgColor: rgb(95, 39, 39);
-    --titleBgColor: purple;
-    --bodyBgColor: rgb(224, 217, 217);
-    --titleBgColor: rgb(67, 35, 35);
+    --headerBgColor: #213885;
+    --poemBgColor: #ECDFD2;
+    --titleBgColor: #213885;
     --headerTextColor: white;
-    --buttonBgColor: silver;
-    --inputBgColor: rgb(207, 206, 206);
-    --navbarBgColor: rgb(47, 87, 85);
-    --buttonBgColor: rgb(90, 150, 144);
+    --inputBgColor: #ECDFD2;
+    --navbarBgColor: #081849;
+    --buttonBgColor: #5F3475;
+    --buttonHoverColor: #893172;
+    --linkHoverColor: #893172;
+    --bodyBgColor: #CCCACC; 
 }
 body{
     margin: 0px;
+    background-color: var(--bodyBgColor);
 }
 h1{
     font-size: 2rem;
@@ -34,8 +36,11 @@ a {
     transition: color 0.3s ease-in-out, text-decoration-color 0.3s ease-in-out;
 }
 a:hover {
-    color: rgb(165, 78, 199);
+    color: var(--linkHoverColor);
     text-decoration-color: transparent;
+}
+a small {
+    text-decoration: none;
 }
 
 button{
@@ -44,18 +49,20 @@ button{
     border-radius: 10px;
     border: 0px;
     color: white;
-    transition: background-color 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     padding: 5px 10px;
 }
 button:hover{
-    background-color: rgb(24, 163, 152);
-    scale: 1.05;
+    background-color: var(--buttonHoverColor);
+    scale: 1.15;
 }
 
 .navbar{
     padding: 10px 2.5%;
     background-color: var(--navbarBgColor);
-    position: absolute;
+    position: fixed;
+    top: 0px;
+    left: 0px;
     width: 95%;
     display: flex;
     gap: 20px;
@@ -104,11 +111,30 @@ button:hover{
     font-size: 1.5rem;
 }
 
+.searchContent{
+    position: relative;
+    width: 400px;
+}
+
 .search{
     width: 100%;
     aspect-ratio: 10/1;
     font-size: 1.5rem;
     background-color: var(--inputBgColor);
+}
+
+.autoComplete{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--inputBgColor);
+}
+.autoComplete > * {
+    overflow-wrap: break-word;
+    width: 100%;
+    padding: 3px 10px;
 }
 
 /* Elements specific to poem.html */
@@ -133,16 +159,17 @@ button:hover{
     text-decoration-color: var(--headerTextColor);
 }
 #poemInfo a:hover{
-    color: rgb(165, 78, 199);
+    color: var(--linkHoverColor);
     text-decoration-color: transparent;
 }
 
 #poemLines{
     text-align: center;
-    background-color: var(--bodyBgColor);
+    background-color: var(--poemBgColor);
     padding: 15px;
     width: 67%;
 }
+
 
 /* Elements specific to poet.html */
 #poetHeader{

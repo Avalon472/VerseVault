@@ -15,13 +15,19 @@
 <div id = "body">
     <a href = "/random"><button id = "randButton">Random</button></a>
     <form action = "/poem" method = "get">
-        <input class = "search"  type = "text" name = "title" placeholder="Enter title">
-        <!--<button type = "submit">Submit</button>-->
+        <div class = "searchContent">
+            <input class = "search" id = "poemSearch" type = "text" name = "title" placeholder="Enter title">
+            <div id = "poemComplete" class = "autoComplete"></div>
+        </div>
     </form>
     <form action = "/poet" method = "get">
-        <input class = "search"  type = "text" name = "poet" placeholder="Enter poet">
-        <!--<button type = "submit">Submit</button>-->
+        <div class = "searchContent">
+            <input class = "search" id = "poetSearch" type = "text" name = "poet" placeholder="Enter poet">
+            <div id = "poetComplete" class = "autoComplete"></div>
+        </div>
     </form>
+    <script src = "{{ url_for('static', filename = 'effects.js')}}"></script>
+
 </div>
 </body>
 </html>
