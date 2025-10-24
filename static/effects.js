@@ -55,7 +55,7 @@ async function fetchResult(searchQuery, type){
         includes(searchQuery.toLowerCase()))
         poemComplete.innerHTML = queryResult.slice(0, 5).map(r => `
         <a href="/poem?title=${encodeURIComponent(r.title)}">
-         ${r.title} <small>by ${r.author}</small> </a>
+         ${r.title} <br> <small>by ${r.author}</small> </a>
         `).join("");
     }
     else if(type == 'poet'){
@@ -64,7 +64,7 @@ async function fetchResult(searchQuery, type){
 
         if(searchQuery != latestSearch)
             return;
-        
+
         poetComplete.style.display = "flex";
         let queryResult = results.authors.filter(author => author.toLowerCase().includes(searchQuery.toLowerCase()))
         poetComplete.innerHTML = queryResult.slice(0, 5).map(r => `

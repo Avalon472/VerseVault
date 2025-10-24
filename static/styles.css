@@ -39,9 +39,6 @@ a:hover {
     color: var(--linkHoverColor);
     text-decoration-color: transparent;
 }
-a small {
-    text-decoration: none;
-}
 
 button{
     font-size: 0.75rem;
@@ -113,11 +110,10 @@ button:hover{
 
 .searchContent{
     position: relative;
-    width: 400px;
+    width: 100%;
 }
 
 .search{
-    width: 100%;
     aspect-ratio: 10/1;
     font-size: 1.5rem;
     background-color: var(--inputBgColor);
@@ -131,10 +127,11 @@ button:hover{
     z-index: 10;
     background-color: var(--inputBgColor);
 }
-.autoComplete > * {
+.autoComplete > a {
     overflow-wrap: break-word;
-    width: 100%;
+    width: 100%-20px;
     padding: 3px 10px;
+    border: 1px solid black;
 }
 
 /* Elements specific to poem.html */
