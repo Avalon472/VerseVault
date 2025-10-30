@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'styles.css')}}">
+</head>
+<body>
+<div class = "navbar">
+    <a href = "/"><button>Home</button></a>
+    <a href = "/poet?poet={{author}}"><button>Author</button></a>
+    <a href = "/random"><button>Random</button></a>
+</div>
+<div id = "favoriteItems">
+    <h1>Favorites</h1>
+    <ul>
+        {% if favoeriteList|length == 0 %}
+            <li>No favorites saved yet, keep searching!</li>
+        {% else %}
+            {% for poem in favoriteList %}
+            <li>
+                {{ poem.poem_title }} by {{ poem.poet_name }}
+                <ul>
+                    <li>
+                        Favorite quote:
+                        "{{ poem.quote }}"
+                    </li>
+                    <li>
+                        Tags:
+                        {{poem.tags}}
+                    </li>
+                </ul>
+            </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+
+    <button id = "removeFavorites">Reset Favorites List</button>
+</div>
+
+    <script src = "{{ url_for('static', filename = 'effects.js')}}"></script>
+</body>
+</html>

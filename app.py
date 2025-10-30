@@ -1,10 +1,25 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import requests
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
 pdb = "https://poetrydb.org"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///poetry.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
+class Favorite(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    poem_title = db.Column(db.String(200), nullable=False)
+    poet_name = db.Column(db.String(100), nullable=False)
+    quote = db.Column(db.Text, nullable=False)
+    tags = db.Column(db.String(100))
+
+    def __repr__(self):
+        return f'<Favorite {self.poem_title}>'
+
+#Routes for static content
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -59,6 +74,37 @@ def get_poetWorks():
     poet = data[0]['author']
 
     return render_template("poet.html", poet = poet, info = info)
+
+#Routes for DB content
+@app.route('/favorites')
+def favorites():
+    favList = Favorite.query.all()
+    return render_template('favorites.html', favoriteList = favList)
+
+@app.route('/add_favorite', methods = ['Post'])
+def add_favorite():
+    data = request.json
+    favItem = Favorite(
+        poem_title = data['title'],
+        poet_name = data['author'],
+        quote = data['quote'],
+        tags = data.get('tags')
+    )
+    db.session.add(favItem)
+    db.session.commit()
+    return jsonify({'status': 'success'})
+
+@app.route('/reset_favorites', methods = ['Post'])
+def reset_favorites():
+    try:
+        db.drop_all()
+        db.create_all()
+        return jsonify({'status': 'success'})
+    except:
+        return jsonify({'status': 'error'})
+
+with app.app_context():
+    db.create_all()
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -13,21 +13,21 @@
     </div>
 </div>
 <div id = "body">
-    <a href = "/random"><button id = "randButton">Random</button></a>
     <form action = "/poem" method = "get">
         <div class = "searchContent">
-            <input class = "search" id = "poemSearch" type = "text" name = "title" placeholder="Enter title">
+            <input class = "search" id = "poemSearch" type = "text" name = "title" placeholder="Search for a title">
             <div id = "poemComplete" class = "autoComplete"></div>
         </div>
     </form>
     <form action = "/poet" method = "get">
         <div class = "searchContent">
-            <input class = "search" id = "poetSearch" type = "text" name = "poet" placeholder="Enter poet">
+            <input class = "search" id = "poetSearch" type = "text" name = "poet" placeholder="Search for a poet">
             <div id = "poetComplete" class = "autoComplete"></div>
         </div>
     </form>
     <script src = "{{ url_for('static', filename = 'effects.js')}}"></script>
-
+    <a href = "/random"><button id = "randButton">Random</button></a>
+    <a href = "/favorites"><button id = "favoritesButton">View Favorites</button></a>
 </div>
 </body>
 </html>

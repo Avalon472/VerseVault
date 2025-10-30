@@ -102,10 +102,10 @@ button:hover{
     gap: 50px;
 }
 
-#randButton{
+#randButton, #favoritesButton{
     height: 50px;
-    width: 150px;
-    font-size: 1.5rem;
+    width: 200px;
+    font-size: 1.25rem;
 }
 
 .searchContent{
@@ -148,7 +148,7 @@ button:hover{
     background-color: var(--titleBgColor);
     color: var(--headerTextColor);
     padding: 15px;
-    padding-top: 7.5%;
+    padding-top: 5%;
     width: 67%;
 }
 #poemInfo a{
@@ -173,7 +173,7 @@ button:hover{
     background-color: var(--titleBgColor);
     color: var(--headerTextColor);
     width: 100%;
-    padding-top: 7.5%;
+    padding-top: 5%;
     padding-bottom: 2%;
 }
 #poetInfo{
@@ -187,4 +187,15 @@ button:hover{
     text-align: left;
     align-items: center;
     padding: 10px;
+}
+
+/* For elements specific to favorites.html */
+#favoriteItems{
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+}
+
+#removeFavorites{
+    width: 200px;
 }
