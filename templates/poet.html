@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poem Reader</title>
+    <title>Works by {{ poet }}</title>
 <link rel="stylesheet" href="{{ url_for('static', filename = 'styles.css')}}">
 </head>
 <body>
 <div class = "navbar">
     <a href = "/"><button>Home</button></a>
+    <a href = "/random"><button>Random</button></a>
     <a href = "/favorites"><button> View Favorites</button></a>
 </div>
 <div id = "poetInfo">
