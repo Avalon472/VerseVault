@@ -166,7 +166,11 @@ button:hover{
     padding: 15px;
     width: 67%;
 }
-
+#addFavorite{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
 
 /* Elements specific to poet.html */
 #poetHeader{
@@ -194,8 +198,10 @@ button:hover{
     display: flex;
     flex-direction: column;
     padding-left: 50px;
+    padding-top: 4%;
 }
 
 #removeFavorites{
     width: 200px;
 }
+

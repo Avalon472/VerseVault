@@ -50,7 +50,7 @@ if (favoriteButton){
     const tags = prompt("Enter any tags, separated by commas: ");
 
     const response = await fetch("/add_favorite", {
-        method: "Post",
+        method: "POST",
         headers: { "Content-Type": "application/json"},
         body: JSON.stringify({
             title: poemTitle,
@@ -73,7 +73,7 @@ if (removeFavorites){
     removeFavorites.addEventListener("click", async() => {
         if (confirm("Are you sure you want to reset your favorites list?")){
             const response = await fetch("/reset_favorites", {
-                method: "Post"
+                method: "POST"
             });
 
         const result = await response.json();

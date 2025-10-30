@@ -7,7 +7,10 @@
 <link rel="stylesheet" href="{{ url_for('static', filename = 'styles.css')}}">
 </head>
 <body>
-<div class = "navbar"><a href = "/"><button>Home</button></a></div>
+<div class = "navbar">
+    <a href = "/"><button>Home</button></a>
+    <a href = "/favorites"><button> View Favorites</button></a>
+</div>
 <div id = "poetInfo">
     <div id = "poetHeader">
         <h1>{{ poet }} </h1>

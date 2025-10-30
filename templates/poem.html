@@ -11,6 +11,7 @@
     <a href = "/"><button>Home</button></a>
     <a href = "/poet?poet={{author}}"><button>Author</button></a>
     <a href = "/random"><button>Random</button></a>
+    <a href = "/favorites"><button> View Favorites</button></a>
 </div>
 <div id = "poemContent">
     <div id = "poemInfo">
@@ -24,7 +25,7 @@
         {% endfor %}
     </div>
     <button class = "toTopButton"> ^ </button>
-    <button id = "addFavorite">*</button>
+    <button id = "addFavorite">Add Poem to Favorites</button>
     <script>
         const poemTitle = "{{ title }}"
         const poemAuthor = "{{ author }}"
